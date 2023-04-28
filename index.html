@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acordeón</title>
+	<style>
+		/* Estilo del acordeón */
+		.accordion {
+			background-color: #eee;
+			color: #444;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			transition: 0.4s;
+		}
+
+		/* Estilo del acordeón cuando se pasa el ratón por encima */
+		.accordion:hover {
+			background-color: #ccc;
+		}
+
+		/* Estilo del panel del acordeón */
+		.panel {
+			padding: 0 18px;
+			background-color: white;
+			display: none;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+
+	<h2>Acordeón</h2>
+
+	<!-- Primer elemento del acordeón -->
+	<button class="accordion">Elemento 1</button>
+	<div class="panel">
+		<p>Contenido del elemento 1.</p>
+	</div>
+
+	<!-- Segundo elemento del acordeón -->
+	<button class="accordion">Elemento 2</button>
+	<div class="panel">
+		<p>Contenido del elemento 2.</p>
+	</div>
+
+	<!-- Tercer elemento del acordeón -->
+	<button class="accordion">Elemento 3</button>
+	<div class="panel">
+		<p>Contenido del elemento 3.</p>
+	</div>
+
+	<!-- JavaScript para activar el acordeón -->
+	<script>
+		// Obtenemos todos los botones del acordeón
+		var acc = document.getElementsByClassName("accordion");
+
+		// Recorremos los botones del acordeón y les asignamos una acción cuando se haga clic
+		for (var i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				// Alternamos la clase "active" para el botón actual
+				this.classList.toggle("active");
+
+				// Obtenemos el panel asociado con el botón actual
+				var panel = this.nextElementSibling;
+
+				// Alternamos la visibilidad del panel
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
