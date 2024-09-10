@@ -1,81 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Acordeón</title>
-	<style>
-		/* Estilo del acordeón */
-		.accordion {
-			background-color: #eee;
-			color: #444;
-			cursor: pointer;
-			padding: 18px;
-			width: 100%;
-			border: none;
-			text-align: left;
-			outline: none;
-			font-size: 15px;
-			transition: 0.4s;
-		}
-
-		/* Estilo del acordeón cuando se pasa el ratón por encima */
-		.accordion:hover {
-			background-color: #ccc;
-		}
-
-		/* Estilo del panel del acordeón */
-		.panel {
-			padding: 0 18px;
-			background-color: white;
-			display: none;
-			overflow: hidden;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio - Documentos Técnicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .header-table {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-table img {
+            max-width: 20%;
+            height: auto;
+        }
+        .header-table div {
+            text-align: center;
+            flex: 1;
+            padding: 0 5px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .section h2 {
+            margin-bottom: 15px;
+            color: #444;
+            text-align: center;
+        }
+        .buttons-container {
+            display: none;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Encabezado con logotipos y títulos -->
+    <div class="header-table container">
+        <img src="https://i.postimg.cc/x8D3wZ33/Cerrejon.png" alt="Logo de Cerrejón" />
+        <div>
+            <img src="https://i.postimg.cc/7h3nwNB8/Safe-work-LOGO.png" alt="SAFE WORK Glencore" />
+        </div>
+        <img src="https://i.postimg.cc/zDKjCJqt/Truck-LOGO.jpg" alt="Camion 793D" />
+    </div>
 
-	<h2>Acordeón</h2>
+    <h1>Página de Inicio - Documentos Técnicos</h1>
 
-	<!-- Primer elemento del acordeón -->
-	<button class="accordion">Elemento 1</button>
-	<div class="panel">
-		<p>Contenido del elemento 1.</p>
-	</div>
+    <div class="container">
+        <div class="section" onclick="toggleSection('evaluacion-buttons')">
+            <h2>Formatos de Evaluación</h2>
+            <div id="evaluacion-buttons" class="buttons-container">
+                <a href="formato_evaluacion_1.html" class="button">Formato de Evaluación 1</a>
+                <a href="formato_evaluacion_2.html" class="button">Formato de Evaluación 2</a>
+                <!-- Añade más enlaces según sea necesario -->
+            </div>
+        </div>
 
-	<!-- Segundo elemento del acordeón -->
-	<button class="accordion">Elemento 2</button>
-	<div class="panel">
-		<p>Contenido del elemento 2.</p>
-	</div>
+        <div class="section" onclick="toggleSection('p0-buttons')">
+            <h2>Formatos de P0</h2>
+            <div id="p0-buttons" class="buttons-container">
+                <a href="formato_p0_1.html" class="button">Formato P0 1</a>
+                <a href="formato_p0_2.html" class="button">Formato P0 2</a>
+                <!-- Añade más enlaces según sea necesario -->
+            </div>
+        </div>
 
-	<!-- Tercer elemento del acordeón -->
-	<button class="accordion">Elemento 3</button>
-	<div class="panel">
-		<p>Contenido del elemento 3.</p>
-	</div>
+        <div class="section" onclick="toggleSection('guia-buttons')">
+            <h2>Guías de Evaluación</h2>
+            <div id="guia-buttons" class="buttons-container">
+                <a href="guia_evaluacion_1.html" class="button">Guía de Evaluación 1</a>
+                <a href="guia_evaluacion_2.html" class="button">Guía de Evaluación 2</a>
+                <!-- Añade más enlaces según sea necesario -->
+            </div>
+        </div>
 
-	<!-- JavaScript para activar el acordeón -->
-	<script>
-		// Obtenemos todos los botones del acordeón
-		var acc = document.getElementsByClassName("accordion");
+        <div class="section" onclick="toggleSection('servicio-buttons')">
+            <h2>Manuales de Servicio</h2>
+            <div id="servicio-buttons" class="buttons-container">
+                <a href="manual_servicio_1.html" class="button">Manual de Servicio 1</a>
+                <a href="manual_servicio_2.html" class="button">Manual de Servicio 2</a>
+                <!-- Añade más enlaces según sea necesario -->
+            </div>
+        </div>
 
-		// Recorremos los botones del acordeón y les asignamos una acción cuando se haga clic
-		for (var i = 0; i < acc.length; i++) {
-			acc[i].addEventListener("click", function() {
-				// Alternamos la clase "active" para el botón actual
-				this.classList.toggle("active");
+        <div class="section" onclick="toggleSection('partes-buttons')">
+            <h2>Manuales de Partes</h2>
+            <div id="partes-buttons" class="buttons-container">
+                <a href="manual_partes_1.html" class="button">Manual de Partes 1</a>
+                <a href="manual_partes_2.html" class="button">Manual de Partes 2</a>
+                <!-- Añade más enlaces según sea necesario -->
+            </div>
+        </div>
+    </div>
 
-				// Obtenemos el panel asociado con el botón actual
-				var panel = this.nextElementSibling;
+    <footer>
+        <p>&copy; 2024 - Documentos Técnicos - Todos los derechos reservados</p>
+    </footer>
 
-				// Alternamos la visibilidad del panel
-				if (panel.style.display === "block") {
-					panel.style.display = "none";
-				} else {
-					panel.style.display = "block";
-				}
-			});
-		}
-	</script>
-
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "flex";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
