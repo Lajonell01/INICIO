@@ -98,6 +98,19 @@
 
     <h1>Página de Inicio - Documentos Técnicos</h1>
 
+    <button onclick="mostrarPDF()">Ver PDF</button>
+
+<div id="pdfViewer" style="display: none;">
+  <iframe src="https://github.com/Lajonell01/INICIO/raw/main/ssbp5054-00-01-all.pdf" width="100%" height="500px"></iframe>
+</div>
+
+<script>
+  function mostrarPDF() {
+    document.getElementById('pdfViewer').style.display = 'block';
+  }
+</script>
+
+
     <div class="container">
         <div class="section" onclick="toggleSection('Backlogs-buttons')">
             <h2>Registro de Backlogs</h2>
